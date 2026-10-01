@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ayesha Siddiqa M | Personal Space</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080405;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           COLORS
+        ========================== */
+
+        :root {
+            --black: #080405;
+            --dark: #100709;
+            --burgundy: #5c0f24;
+            --burgundy-light: #8f1d3f;
+            --wine: #74152f;
+            --cream: #f8e8e8;
+            --muted: #c5aeb3;
+        }
+
+
+        /* =========================
+           SCROLL BAR
+        ========================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080405;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #64142c;
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+
+            background: #6d1531;
+
+            filter: blur(180px);
+            opacity: 0.18;
+
+            top: -150px;
+            left: -150px;
+
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 400px;
+            height: 400px;
+
+            background: #8b1d3d;
+
+            filter: blur(180px);
+            opacity: 0.12;
+
+            bottom: -150px;
+            right: -100px;
+
+            z-index: -2;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================== */
+
+        .heart {
+            position: fixed;
+            bottom: -30px;
+
+            color: #a52a4c;
+            font-size: 20px;
+
+            opacity: 0.35;
+
+            animation: floatHeart 9s linear infinite;
+
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           WELCOME PAGE
+        ========================== */
+
+        #welcome {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 25px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(116, 21, 47, 0.35),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(92, 15, 36, 0.30),
+                    transparent 35%
+                ),
+
+                #080405;
+        }
+
+
+        .welcome-card {
+
+            width: 100%;
+            max-width: 720px;
+
+            padding: 70px 40px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(40, 9, 17, 0.95),
+                    rgba(12, 5, 7, 0.97)
+                );
+
+            border: 1px solid #5b1a2c;
+
+            border-radius: 35px;
+
+            box-shadow:
+                0 0 80px rgba(107, 21, 49, 0.22),
+                inset 0 0 50px rgba(255, 255, 255, 0.015);
+
+            position: relative;
+
+            overflow: hidden;
+
+            animation: welcomeAppear 1.2s ease;
+        }
+
+        @keyframes welcomeAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+
+        .welcome-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: #8f1d3f;
+
+            filter: blur(100px);
+
+            top: -80px;
+            left: -80px;
+
+            opacity: 0.4;
+        }
+
+
+        .welcome-icon {
+
+            font-size: 65px;
+
+            margin-bottom: 20px;
+
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+
+        .welcome-card h1 {
+
+            font-size: clamp(35px, 7vw, 65px);
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+
+        .burgundy-text {
+            color: #b52a50;
+
+            text-shadow:
+                0 0 20px rgba(181, 42, 80, 0.35);
+        }
+
+
+        .welcome-card p {
+
+            color: #c9b5ba;
+
+            font-size: 18px;
+
+            max-width: 550px;
+
+            margin: auto auto 35px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .main-btn {
+
+            border: none;
+
+            padding: 16px 38px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8f1d3f,
+                    #5c0f24
+                );
+
+            box-shadow:
+                0 10px 30px rgba(116, 21, 47, 0.35);
+
+            transition: 0.35s;
+        }
+
+
+        .main-btn:hover {
+
+            transform: translateY(-5px) scale(1.04);
+
+            box-shadow:
+                0 15px 40px rgba(143, 29, 63, 0.5);
+        }
+
+
+        .main-btn:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =========================
+           MAIN WEBSITE
+        ========================== */
+
+        #mainContent {
+            display: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(8, 4, 5, 0.85);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(143, 29, 63, 0.2);
+        }
+
+
+        .logo {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: white;
+        }
+
+
+        .logo span {
+            color: #a8274c;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #bcaeb1;
+
+            transition: 0.3s;
+
+            font-size: 14px;
+        }
+
+
+        nav a:hover {
+            color: #d83c66;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+
+            padding: 100px 7%;
+
+            position: relative;
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-heading .small {
+
+            color: #a8274c;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 12px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: clamp(30px, 5vw, 45px);
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-heading p {
+
+            color: #9f8c91;
+
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+
+            min-height: 90vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(107, 20, 46, 0.22),
+                    transparent 40%
+                );
+        }
+
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+
+        .hello {
+
+            color: #b52a50;
+
+            font-size: 15px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(42px, 8vw, 78px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 span {
+            color: #a8274c;
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #bba9ae;
+
+            font-size: 18px;
+        }
+
+
+        .hero-buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .outline-btn {
+
+            padding: 14px 30px;
+
+            border-radius: 50px;
+
+            background: transparent;
+
+            color: #d7c5ca;
+
+            border: 1px solid #672039;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .outline-btn:hover {
+
+            background: #541025;
+
+            border-color: #8f1d3f;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+
+        .about-image {
+
+            min-height: 350px;
+
+            border-radius: 30px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #5c0f24,
+                    #120507
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 100px;
+
+            border: 1px solid #642039;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.5);
+        }
+
+
+        .about-text h3 {
+
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .about-text p {
+
+            color: #ad9a9f;
+
+            margin-bottom: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        .info-box {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+
+        .info {
+
+            padding: 15px;
+
+            background: #120709;
+
+            border: 1px solid #32131d;
+
+            border-radius: 12px;
+
+            color: #c6b3b8;
+
+            font-size: 14px;
+        }
+
+
+        .info strong {
+
+            display: block;
+
+            color: #b52a50;
+
+            margin-bottom: 3px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .cards {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 22px;
+        }
+
+
+        .card {
+
+            padding: 32px 25px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #17090d,
+                    #0d0507
+                );
+
+            border: 1px solid #32131d;
+
+            transition: 0.4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+
+            height: 100px;
+
+            background: #791832;
+
+            filter: blur(70px);
+
+            right: -50px;
+
+            bottom: -50px;
+
+            opacity: 0;
+
+            transition: 0.4s;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-10px);
+
+            border-color: #75203b;
+
+            box-shadow:
+                0 20px 45px rgba(88, 14, 37, 0.25);
+        }
+
+
+        .card:hover::after {
+            opacity: 0.35;
+        }
+
+
+        .card-icon {
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 18px;
+
+            background: #350b19;
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .card h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .card p {
+
+            color: #98878c;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FAVORITE SECTION
+        ========================== */
+
+        .favorite-box {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 55px 35px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #4b0d20,
+                    #120507
+                );
+
+            border: 1px solid #71203b;
+
+            box-shadow:
+                0 25px 70px rgba(72, 9, 29, 0.25);
+        }
+
+
+        .favorite-box .big-icon {
+
+            font-size: 65px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .favorite-box h3 {
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .favorite-box p {
+
+            color: #d0bec3;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           SECRET MESSAGE
+        ========================== */
+
+        #secret {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 18px;
+
+            color: #f0cbd4;
+
+            background: #19080e;
+
+            border: 1px solid #6b1a36;
+
+            border-radius: 15px;
+
+            animation: secretAppear 0.5s ease;
+        }
+
+
+        @keyframes secretAppear {
+
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================== */
+
+        .quote {
+
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+
+        .quote-text {
+
+            font-size: clamp(22px, 4vw, 34px);
+
+            line-height: 1.5;
+
+            color: #eadce0;
+        }
+
+
+        .quote-text span {
+            color: #a8274c;
+        }
+
+
+        .quote-author {
+
+            margin-top: 20px;
+
+            color: #927d83;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            padding: 40px 20px;
+
+            text-align: center;
+
+            background: #050304;
+
+            border-top: 1px solid #291018;
+
+            color: #78676c;
+        }
+
+
+        footer strong {
+            color: #a8274c;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media(max-width: 750px) {
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 250px;
+            }
+
+            .info-box {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-card {
+                padding: 50px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart" style="left:8%; animation-delay:0s;">♡</div>
+    <div class="heart" style="left:20%; animation-delay:3s;">♥</div>
+    <div class="heart" style="left:40%; animation-delay:1s;">♡</div>
+    <div class="heart" style="left:60%; animation-delay:5s;">♥</div>
+    <div class="heart" style="left:80%; animation-delay:2s;">♡</div>
+    <div class="heart" style="left:92%; animation-delay:6s;">♥</div>
+
+
+    <!-- =========================
+         WELCOME SCREEN
+    ========================== -->
+
+    <div id="welcome">
+
+        <div class="welcome-card">
+
+            <div class="welcome-icon">
+                🖤
+            </div>
+
+            <h1>
+                Welcome to
+                <br>
+                <span class="burgundy-text">
+                    Ayesha's World
+                </span>
+                ✨
+            </h1>
+
+            <p>
+                A little space filled with my favorite things,
+                random thoughts, beautiful memories and
+                a tiny bit of chaos. ♡
+            </p>
+
+            <button
+                class="main-btn"
+                onclick="enterSite()">
+
+                Enter My World ✨
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <div id="mainContent">
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <div class="logo">
+                Ayesha<span>♡</span>
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#favorites">Favorites</a>
+                </li>
+
+                <li>
+                    <a href="#hobbies">Hobbies</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="hero-content">
+
+                <div class="hello">
+                    Hello, I'm
+                </div>
+
+                <h1>
+                    Ayesha
+                    <span>Siddiqa M</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Computer Science student,
+                    professional series binge-watcher,
+                    biryani lover and someone who believes
+                    that life should be lived with a little
+                    chaos and a lot of memories. 🖤
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="main-btn"
+                        onclick="scrollToAbout()">
+
+                        Get to know me ♡
+
+                    </button>
+
+                    <button
+                        class="outline-btn"
+                        onclick="showSecret()">
+
+                        Don't click 👀
+
+                    </button>
+
+                </div>
+
+                <div id="secret">
+
+                    🎀 You clicked it!
+
+                    <br><br>
+
+                    Okay... here's a secret:
+
+                    <br>
+
+                    I probably have another episode
+                    playing right now. 😂🖤
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about">
+
+            <div class="section-heading">
+
+                <div class="small">
+                    Get to know me
+                </div>
+
+                <h2>
+                    A Little <span class="burgundy-text">
+                        About Me
+                    </span>
+                </h2>
+
+                <p>
+                    The person behind this little website.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-image">
+
+                    👩🏻‍💻
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <h3>
+                        Hey there! I'm Ayesha. ♡
+                    </h3>
+
+                    <p>
+
+                        I'm currently pursuing my
+                        <strong>2nd year of Computer Science
+                        and Engineering</strong> at
+                        Jain Institute of Technology,
+                        Davanagere.
+
+                    </p>
+
+                    <p>
+
+                        I enjoy spending my free time
+                        watching series and dramas,
+                        exploring cafes, hanging out with
+                        friends and making random memories.
+
+                    </p>
+
+                    <p>
+
+                        My personality?
+
+                        Somewhere between
+                        <strong>sleepy girl + foodie +
+                        night owl + main character energy.</strong> 😂
+
+                    </p>
+
+
+                    <div class="info-box">
+
+                        <div class="info">
+
+                            <strong>🎓 Education</strong>
+
+                            CSE Student
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>📍 College</strong>
+
+                            Jain Institute of Technology
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>🍛 Food</strong>
+
+                            Spicy Biryani
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <strong>🌙 Personality</strong>
+
+                            Certified Night Owl
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FAVORITES
+        ========================== -->
+
+        <section id="favorites">
+
+            <div class="section-heading">
+
+                <div class="small">
+                    Things I love
+                </div>
+
+                <h2>
+                    My <span class="burgundy-text">
+                        Favorites
+                    </span> ✨
+                </h2>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🖤
+                    </div>
+
+                    <h3>
+                        Black
+                    </h3>
+
+                    <p>
+                        My forever favorite color.
+                        Simple, classy and mysterious.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🍛
+                    </div>
+
+                    <h3>
+                        Spicy Biryani
+                    </h3>
+
+                    <p>
+                        If it isn't spicy enough,
+                        I'm probably adding more chilli.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        📺
+                    </div>
+
+                    <h3>
+                        Series & Dramas
+                    </h3>
+
+                    <p>
+                        "Just one more episode"
+                        somehow becomes 5 AM.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🌙
+                    </div>
+
+                    <h3>
+                        Late Nights
+                    </h3>
+
+                    <p>
+                        Late-night conversations,
+                        music and random thoughts.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             HOBBIES
+        ========================== -->
+
+        <section id="hobbies">
+
+            <div class="section-heading">
+
+                <div class="small">
+                    My free time
+                </div>
+
+                <h2>
+                    Things I <span class="burgundy-text">
+                        Enjoy
+                    </span> 🌷
+                </h2>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🎬
+                    </div>
+
+                    <h3>
+                        Binge Watching
+                    </h3>
+
+                    <p>
+                        Getting emotionally attached
+                        to fictional characters.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        ☕
+                    </div>
+
+                    <h3>
+                        Cafe Hopping
+                    </h3>
+
+                    <p>
+                        Cute cafes + good food +
+                        amazing conversations.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🌊
+                    </div>
+
+                    <h3>
+                        Waterparks
+                    </h3>
+
+                    <p>
+                        Because sometimes you just
+                        need to forget everything and
+                        have fun.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🛍️
+                    </div>
+
+                    <h3>
+                        Outings
+                    </h3>
+
+                    <p>
+                        Going out with friends and
+                        creating unforgettable memories.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FAVORITE THING
+        ========================== -->
+
+        <section>
+
+            <div class="favorite-box">
+
+                <div class="big-icon">
+                    🍛
+                </div>
+
+                <h3>
+                    A Very Important Question...
+                </h3>
+
+                <p>
+
+                    What makes a bad day better?
+
+                    <br><br>
+
+                    <strong>
+                        SPICY BIRYANI.
+                    </strong>
+
+                    Obviously. 😂
+
+                </p>
+
+                <br>
+
+                <button
+                    class="main-btn"
+                    onclick="biryaniMessage()">
+
+                    Click if you agree 🤭
+
+                </button>
+
+                <div id="biryaniResult"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             QUOTE
+        ========================== -->
+
+        <section>
+
+            <div class="quote">
+
+                <div class="quote-text">
+
+                    "Collect moments,
+
+                    <span>
+                        not things.
+                    </span>
+
+                    And make every moment
+                    a little more fun." ✨
+
+                </div>
+
+                <div class="quote-author">
+
+                    — Ayesha's little philosophy 🖤
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <p>
+
+                Made with 🖤 + 🍛 + ✨ by
+
+                <strong>
+                    Ayesha Siddiqa M
+                </strong>
+
+            </p>
+
+            <br>
+
+            <small>
+                © 2026 Ayesha's Personal Space
+            </small>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* ENTER WEBSITE */
+
+        function enterSite() {
+
+            const welcome =
+                document.getElementById("welcome");
+
+            const main =
+                document.getElementById("mainContent");
+
+
+            welcome.style.opacity = "0";
+
+            welcome.style.transition =
+                "opacity 0.7s ease";
+
+
+            setTimeout(function () {
+
+                welcome.style.display = "none";
+
+                main.style.display = "block";
+
+                window.scrollTo(0, 0);
+
+            }, 700);
+
+        }
+
+
+
+        /* SCROLL TO ABOUT */
+
+        function scrollToAbout() {
+
+            document
+                .getElementById("about")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+
+        /* SECRET BUTTON */
+
+        function showSecret() {
+
+            const secret =
+                document.getElementById("secret");
+
+
+            if (secret.style.display === "block") {
+
+                secret.style.display = "none";
+
+            } else {
+
+                secret.style.display = "block";
+
+            }
+
+        }
+
+
+
+        /* BIRYANI BUTTON */
+
+        function biryaniMessage() {
+
+            const result =
+                document.getElementById("biryaniResult");
+
+
+            result.innerHTML =
+
+                `
+                <div style="
+                    margin-top:20px;
+                    padding:15px;
+                    background:#230a12;
+                    border:1px solid #72203c;
+                    border-radius:15px;
+                    color:#f2cbd5;
+                ">
+                    🥳 YESSS! You officially have
+                    excellent taste!
+                    <br><br>
+                    🍛 + 🖤 = PERFECT COMBINATION
+                </div>
+                `;
+
+        }
+
+
+
+        /* EXTRA CLICK EFFECT */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target.tagName === "BUTTON"
+                ) {
+
+                    event.target.style.transform =
+                        "scale(0.96)";
+
+                    setTimeout(() => {
+
+                        event.target.style.transform =
+                            "";
+
+                    }, 120);
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
